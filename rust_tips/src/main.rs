@@ -1,3 +1,5 @@
+mod join;
+
 fn main() {
-    println!("Hello, world!");
+    join::test();
 }
