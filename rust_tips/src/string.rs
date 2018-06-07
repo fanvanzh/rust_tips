@@ -16,3 +16,10 @@ fn from_vec8() {
   println!("{:?}", String::from_utf8_uncheck(msg.clone()));
   println!("{:?}", String::from_utf8(msg.clone()).unwrap());
 }
+
+fn from_c() {
+  use std::ffi::CStr;
+  let ptr = 0 as *const i8;
+  let msg = CStr::from_ptr(ptr);
+  println!("msg is {}", msg.to_str().unwrap());
+}
