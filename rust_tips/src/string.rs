@@ -23,3 +23,10 @@ fn from_c() {
   let msg = CStr::from_ptr(ptr);
   println!("msg is {}", msg.to_str().unwrap());
 }
+
+fn to_c() {
+  use std::ffi::CString;
+  let c_str = CString::new("hello").unwrap();;
+  let ptr = c_str.as_ptr();
+  // ptr is with 0 terminated.
+}
